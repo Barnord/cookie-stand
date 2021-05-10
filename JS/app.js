@@ -1,33 +1,43 @@
 'use strict'
 
-let hours = [
-  `6am: ${} cookies`,
-  `7am: ${} cookies`,
-  `8am: ${} cookies`,
-  `9am: ${} cookies`,
-  `10am: ${} cookies`,
-  `11am: ${} cookies`,
-  `12pm: ${} cookies`,
-  `1pm: ${} cookies`,
-  `2pm: ${} cookies`,
-  `3pm: ${} cookies`,
-  `4pm: ${} cookies`,
-  `5pm: ${} cookies`,
-  `6pm: ${} cookies`,
-  `7pm: ${} cookies`,
-  `total: ${} cookies`
-]
+ let hours = [
+  '6am: ',
+  '7am: ',
+  '8am: ',
+  '9am: ',
+  '10am: ',
+  '11am: ',
+  '12pm: ',
+  '1pm: ',
+  '2pm: ',
+  '3pm: ',
+  '4pm: ',
+  '5pm: ',
+  '6pm: ',
+  '7pm: ',
+  'total: '
+ ]
 
 const Seattle = {
-  MinCust: 23,
+  minCust: 23,
   maxCust: 65,
   cookieCust: 6.3,
+  dailyCust: function() {
+    let hourCust = []
+    let hourlyCust = []
+    for (let i=0; i < hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust
+      hourlyCust[i] = hours [i] + hourCust[i] + ' cookies'
+    }
+    console.log(hourlyCust)
+  }
 }
 
 const Tokyo = {
   MinCust: 3,
   maxCust: 24,
   cookieCust: 1.2,
+  
 }
 
 const Dubai = {
