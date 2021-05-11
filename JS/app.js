@@ -2,24 +2,21 @@
 
  let dailyHours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', 'total: ']
 
+ let locations = []
+
 function City (name, minCust, maxCust, cookieCust) {
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.cookieCust = cookieCust;
   this.hours = dailyHours;
-  // this.hourlyCust = [];
-  // this.hourlyCookie = [];
+  this.hourlyCust = [];
+  this.hourlyCookie = [];
+  locations.push()
 }
 
-City.prototype.getCustomers = function() {
-  Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-}
-
-City.prototype.daySim = function() {
-  for (let i=0; i < this.hours.length - 1;) {
-    
-  }
+function cityList(location, name, minCust, maxCust, cookieCust) {
+  let location = new City(name, minCust, maxCust, cookieCust)
 }
 
 const seattle = new City('Seattle', 23, 65, 6.3)
@@ -27,6 +24,24 @@ const tokyo = new City('Tokyo', 3, 24, 1.2)
 const dubai = new City('Dubai', 11, 38, 3.7)
 const paris = new City('Paris', 20, 38, 2.3)
 const lima = new City('Lima', 2, 16, 4.6)
+
+function getCustomers(a, b) {
+  return Math.floor(Math.random() * (b - a)) + a;
+}
+
+City.prototype.daySim = function() {
+  let sum = 0
+  for (let i=0; i < this.hours.length - 1; i++) {
+    this.hourlyCust[i] = getCustomers(this.minCust, this.maxCust);
+    this.hourlyCookie[i] = Math.round(this.hourlyCust[i] * this.cookieCust);
+    sum += this.hourlyCust[i]
+    console.log(this.hourlyCust[i], this.hourlyCookie[i], sum);
+  }
+  this.hourlyCust[this.hours.length-1] = sum
+  this.hourlyCookie[this.hours.length-1] = Math.round(sum * this.cookieCust)
+  console.log(this.hourlyCust, this.hourlyCookie)
+  return this.hourlyCust, this.hourlyCookie
+}
 
 const Seattle = {
   name: 'Seattle',
