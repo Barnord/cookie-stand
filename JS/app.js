@@ -1,6 +1,6 @@
 'use strict'
 
- let hours = [
+ let dailyHours = [
   '6am: ',
   '7am: ',
   '8am: ',
@@ -19,48 +19,154 @@
  ]
 
 const Seattle = {
+  name: 'Seattle',
   minCust: 23,
   maxCust: 65,
   cookieCust: 6.3,
+  hours: dailyHours,
+  hourlyCust: [],
+  hourlyCookie: [],
   dailyCust: function() {
     let hourCust = []
-    let hourlyCust = []
-    for (let i=0; i < hours.length - 1; i++) {
-      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust
-      hourlyCust[i] = hours [i] + hourCust[i] + ' cookies'
+    let sumCust = 0
+    for (let i=0; i < this.hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+      sumCust = sumCust + hourCust[i];
+      this.hourlyCust[i] = this.hours[i] + hourCust[i] + ' customers';
+      console.log(this.hourlyCust[i]);
+      this.hourlyCookie[i] = this.hours[i] + Math.round(hourCust[i] * this.cookieCust) + ' cookies';
     }
-    console.log(hourlyCust)
-  }
+    this.hourlyCust[this.hours.length-1] = `${this.hours[this.hours.length -1]}${sumCust} customers`;
+    this.hourlyCookie[this.hours.length-1] = `${this.hours[this.hours.length -1]}${Math.round(sumCust * this.cookieCust)} cookies`;
+    console.log(this.hourlyCust);
+    console.log(this.hourlyCookie);
+  },
 }
 
 const Tokyo = {
-  MinCust: 3,
+  name: 'Tokyo',
+  minCust: 3,
   maxCust: 24,
   cookieCust: 1.2,
-  
+  hours: dailyHours,
+  hourlyCust: [],
+  hourlyCookie: [],
+  dailyCust: function() {
+    let hourCust = []
+    let sumCust = 0
+    for (let i=0; i < this.hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+      sumCust = sumCust + hourCust[i];
+      this.hourlyCust[i] = this.hours[i] + hourCust[i] + ' customers';
+      console.log(this.hourlyCust[i]);
+      this.hourlyCookie[i] = this.hours[i] + Math.round(hourCust[i] * this.cookieCust) + ' cookies';
+    }
+    this.hourlyCust[this.hours.length-1] = `${this.hours[this.hours.length -1]}${sumCust} customers`;
+    this.hourlyCookie[this.hours.length-1] = `${this.hours[this.hours.length -1]}${Math.round(sumCust * this.cookieCust)} cookies`;
+    console.log(this.hourlyCust);
+    console.log(this.hourlyCookie);
+  },
 }
 
 const Dubai = {
-  MinCust: 11,
+  name: 'Dubai',
+  minCust: 11,
   maxCust: 38,
   cookieCust: 3.7,
+  hours: dailyHours,
+  hourlyCust: [],
+  hourlyCookie: [],
+  dailyCust: function() {
+    let hourCust = []
+    let sumCust = 0
+    for (let i=0; i < this.hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+      sumCust = sumCust + hourCust[i];
+      this.hourlyCust[i] = this.hours[i] + hourCust[i] + ' customers';
+      console.log(this.hourlyCust[i]);
+      this.hourlyCookie[i] = this.hours[i] + Math.round(hourCust[i] * this.cookieCust) + ' cookies';
+    }
+    this.hourlyCust[this.hours.length-1] = `${this.hours[this.hours.length -1]}${sumCust} customers`;
+    this.hourlyCookie[this.hours.length-1] = `${this.hours[this.hours.length -1]}${Math.round(sumCust * this.cookieCust)} cookies`;
+    console.log(this.hourlyCust);
+    console.log(this.hourlyCookie);
+  },
 }
 
 const Paris = {
-  MinCust: 20,
+  name: 'Paris',
+  minCust: 20,
   maxCust: 38,
   cookieCust: 2.3,
+  hours: dailyHours,
+  hourlyCust: [],
+  hourlyCookie: [],
+  dailyCust: function() {
+    let hourCust = []
+    let sumCust = 0
+    for (let i=0; i < this.hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+      sumCust = sumCust + hourCust[i];
+      this.hourlyCust[i] = this.hours[i] + hourCust[i] + ' customers';
+      console.log(this.hourlyCust[i]);
+      this.hourlyCookie[i] = this.hours[i] + Math.round(hourCust[i] * this.cookieCust) + ' cookies';
+    }
+    this.hourlyCust[this.hours.length-1] = `${this.hours[this.hours.length -1]}${sumCust} customers`;
+    this.hourlyCookie[this.hours.length-1] = `${this.hours[this.hours.length -1]}${Math.round(sumCust * this.cookieCust)} cookies`;
+    console.log(this.hourlyCust);
+    console.log(this.hourlyCookie);
+  },
 }
 
 const Lima = {
-  MinCust: 2,
+  name: 'Lima',
+  minCust: 2,
   maxCust: 16,
   cookieCust: 4.6,
+  hours: dailyHours,
+  hourlyCust: [],
+  hourlyCookie: [],
+  dailyCust: function() {
+    let hourCust = []
+    let sumCust = 0
+    for (let i=0; i < this.hours.length - 1; i++) {
+      hourCust[i] = Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+      sumCust = sumCust + hourCust[i];
+      this.hourlyCust[i] = this.hours[i] + hourCust[i] + ' customers';
+      console.log(this.hourlyCust[i]);
+      this.hourlyCookie[i] = this.hours[i] + Math.round(hourCust[i] * this.cookieCust) + ' cookies';
+    }
+    this.hourlyCust[this.hours.length-1] = `${this.hours[this.hours.length -1]}${sumCust} customers`;
+    this.hourlyCookie[this.hours.length-1] = `${this.hours[this.hours.length -1]}${Math.round(sumCust * this.cookieCust)} cookies`;
+    console.log(this.hourlyCust);
+    console.log(this.hourlyCookie);
+  },
 }
+
+Seattle.dailyCust()
+Tokyo.dailyCust()
+Dubai.dailyCust()
+Paris.dailyCust()
+Lima.dailyCust()
+
+const dataDiv = document.getElementById('data');
+
+function printData(city) {
+  const articleElem = document.createElement('article');
+  dataDiv.appendChild(articleElem);
+
+  const h2Elem = document.createElement('h2');
+  h2Elem.textContent = city.name;
+  articleElem.appendChild(h2Elem);
+}
+
+printData(Seattle)
 
 // include:
 // Stores the min/max hourly customers, and the average cookies per customer, in object properties
 // Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 // Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
 // Store the results for each location in a separate array… perhaps as a property of the object representing that location
+// Display the values of each array as unordered lists in the browser
+
 // Display the values of each array as unordered lists in the browser
