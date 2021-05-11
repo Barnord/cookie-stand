@@ -1,22 +1,32 @@
 'use strict'
 
- let dailyHours = [
-  '6am: ',
-  '7am: ',
-  '8am: ',
-  '9am: ',
-  '10am: ',
-  '11am: ',
-  '12pm: ',
-  '1pm: ',
-  '2pm: ',
-  '3pm: ',
-  '4pm: ',
-  '5pm: ',
-  '6pm: ',
-  '7pm: ',
-  'total: '
- ]
+ let dailyHours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', 'total: ']
+
+function City (name, minCust, maxCust, cookieCust) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.cookieCust = cookieCust;
+  this.hours = dailyHours;
+  // this.hourlyCust = [];
+  // this.hourlyCookie = [];
+}
+
+City.prototype.getCustomers = function() {
+  Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+}
+
+City.prototype.daySim = function() {
+  for (let i=0; i < this.hours.length - 1;) {
+    
+  }
+}
+
+const seattle = new City('Seattle', 23, 65, 6.3)
+const tokyo = new City('Tokyo', 3, 24, 1.2)
+const dubai = new City('Dubai', 11, 38, 3.7)
+const paris = new City('Paris', 20, 38, 2.3)
+const lima = new City('Lima', 2, 16, 4.6)
 
 const Seattle = {
   name: 'Seattle',
