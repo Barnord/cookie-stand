@@ -32,12 +32,9 @@ City.prototype.daySim = function() {
     this.hourlyCust[i] = getCustomers(this.minCust, this.maxCust);
     this.hourlyCookie[i] = Math.round(this.hourlyCust[i] * this.cookieCust);
     sum += this.hourlyCust[i]
-    // console.log(this.hourlyCust[i], this.hourlyCookie[i], sum);
   }
   this.hourlyCust[this.hours.length-1] = sum
   this.hourlyCookie[this.hours.length-1] = Math.round(sum * this.cookieCust)
-  // console.log(this.hourlyCust, this.hourlyCookie)
-  return
 }
 
 City.prototype.printRow = function() {
@@ -49,17 +46,10 @@ City.prototype.printRow = function() {
     trElem.appendChild(thName);
 
   for (let i=0; i<dailyHours.length; i++) {
-    let thElem = document.createElement('th');
-    thElem.textContent = this.hourlyCookie[i];
-    trElem.appendChild(thElem);
+    let tdElem = document.createElement('td');
+    tdElem.textContent = this.hourlyCookie[i];
+    trElem.appendChild(tdElem);
   }
-}
-
-function refresh() {
-  for (let i=0; i < locations.length; i++) {
-    locations[i].daySim();
-  }
-  getTotals();
 }
 
 function getTotals() {
@@ -71,6 +61,13 @@ function getTotals() {
     hourlySums[i] = sum;
     sum = 0;
   }
+}
+
+function refresh() {
+  for (let i=0; i < locations.length; i++) {
+    locations[i].daySim();
+  }
+  getTotals();
 }
 
 const dataDiv = document.getElementById('data')
