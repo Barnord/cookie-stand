@@ -19,6 +19,25 @@
     <main>
       <h2>Sales</h2>
       <div id="data"></div>
+      <section>
+        <form id="newLocationForm">
+          <fieldset>
+            <legend>New Location</legend>
+            <label for="location"></label>
+            <input type="text" name="location">
+            <label>minCust</label>
+            <input type="number" name="minCust">
+            <label>maxCust</label>
+            <input type="number" name="maxCust">
+            <label>cookieCust</label>
+            <input type="number" name="cookieCust">
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <form id="refresh">
+          <button type="submit">Refresh Selected</button>
+        </form>
+      </section>
     </main>
     <footer></footer>
     <script src="js/app.js"></script>
