@@ -155,6 +155,7 @@ function check() {
       locations[i].daySim();
     }
   }
+  getTotals();
   printData();
 }
 
