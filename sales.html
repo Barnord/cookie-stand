@@ -20,7 +20,7 @@
       <h2>Sales</h2>
       <div id="data"></div>
       <section>
-        <form>
+        <form id="newLocationForm">
           <fieldset>
             <legend>New Location</legend>
             <label for="location"></label>
@@ -31,7 +31,11 @@
             <input type="number" name="maxCust">
             <label>cookieCust</label>
             <input type="number" name="cookieCust">
+            <button type="submit">Submit</button>
           </fieldset>
+        </form>
+        <form id="refresh">
+          <button type="submit">Refresh Selected</button>
         </form>
       </section>
     </main>

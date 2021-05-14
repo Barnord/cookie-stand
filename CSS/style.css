@@ -21,6 +21,7 @@ table * {
   border: 3px solid black;
   background-color: sandybrown;
   font-size: 1.2em;
+  padding: 0px 3px;
 }
 
 h2 {
